@@ -34,6 +34,8 @@ let menuItems = [
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
 
-// function menuMaker(menuText) {
-  
-// }
+function menuMaker(menuText) {
+
+
+
+}

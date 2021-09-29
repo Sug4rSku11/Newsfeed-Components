@@ -87,6 +87,7 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
+  
 ];
 
 /*
@@ -134,7 +135,8 @@ function articleMaker(object){
   div.appendChild(expandButton);
 
 div.classList.add('article');
-p1.classList.add('date')
+p1.classList.add('date');
+expandButton.classList.add('expandButton');
 
   h2.textContent = object.title;
   p1.textContent = object.date;
