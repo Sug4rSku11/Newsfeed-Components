@@ -35,7 +35,25 @@ let menuItems = [
 */
 
 function menuMaker(menuText) {
+const header = document.querySelector('.header');
+const menuButton = document.querySelector('.menu-button');
+const menu = document.createElement('div');
+const list = document.createElement('ul');
 
 
+header.appendChild(menu);
+menu.appendChild(list);
 
+menu.classList.add('menu');
+
+menuButton.addEventListener('click', event => {
+  menu.classList.toggle('menu--open');
+})
+menuText.forEach(item => {
+  const menuItem = document.createElement('li');
+  menuItem.textContent = item;
+  list.appendChild(menuItem);
+})
+return menu;
 }
+menuMaker(menuItems);
