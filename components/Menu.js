@@ -20,6 +20,8 @@ let menuItems = [
 
   The 'menuMaker' takes an array of menu items as its only argument.
 
+
+
   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
   Add those items to the <ul>
 
@@ -31,3 +33,27 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+function menuMaker(menuText) {
+const header = document.querySelector('.header');
+const menuButton = document.querySelector('.menu-button');
+const menu = document.createElement('div');
+const list = document.createElement('ul');
+
+
+header.appendChild(menu);
+menu.appendChild(list);
+
+menu.classList.add('menu');
+
+menuButton.addEventListener('click', event => {
+  menu.classList.toggle('menu--open');
+})
+menuText.forEach(item => {
+  const menuItem = document.createElement('li');
+  menuItem.textContent = item;
+  list.appendChild(menuItem);
+})
+return menu;
+}
+menuMaker(menuItems);

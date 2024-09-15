@@ -87,6 +87,7 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
+  
 ];
 
 /*
@@ -114,3 +115,46 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const articles = document.querySelector('.articles');
+
+function articleMaker(object){
+  const div = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const p4 = document.createElement('p');
+  const expandButton = document.createElement('span');
+  
+
+  document.body.appendChild(div);
+  div.appendChild(h2);
+  div.appendChild(p1);
+  div.appendChild(p3);
+  div.appendChild(p4);
+  div.appendChild(expandButton);
+
+div.classList.add('article');
+p1.classList.add('date');
+expandButton.classList.add('expandButton');
+
+  h2.textContent = object.title;
+  p1.textContent = object.date;
+  p2.textContent = object.firstParagraph;
+  p3.textContent = object.secondParagraph;
+  p4.textContent = object.thirdParagraph;
+  expandButton.textContent = '+';
+
+  expandButton.addEventListener('click', event => {
+    div.classList.toggle('article-open');
+  })
+  return div;
+}
+
+const articleElements = data.map(item => {
+  return articleMaker(item);
+});
+const articleWrapper = document.querySelector('.articles');
+articleElements.forEach(articleBlock => {
+  articleWrapper.appendChild(articleBlock);
+} )
